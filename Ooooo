@@ -242,15 +242,15 @@ notification.SoundId = "rbxassetid://9086208751"
 notification.Volume = 10
 
 game.StarterGui:SetCore("SendNotification", {
-      Icon = "http://www.roblox.com/asset/?id=12523036534";
-      Title = "Domadic Hub", 
-      Text = "ðŸ”ƒLoading...ðŸ”ƒ";
+      Icon = "http://www.roblox.com/asset/?id=17585525987";
+      Title = "MIKIMARU HUB", 
+      Text = "load";
 })
 wait(2)
 game.StarterGui:SetCore("SendNotification", {
-      Icon = "http://www.roblox.com/asset/?id=12523036534";
-      Title = "Domadic Hub", 
-      Text = "âœ…Completeâœ…";
+      Icon = "http://www.roblox.com/asset/?id=17585525987";
+      Title = "MIKIMARU HUB", 
+      Text = "คีย์ ของคุณ Key you here";
 notification:Play()
 })
 ---โค้ดx2--
@@ -289,18 +289,46 @@ notification.SoundId = "rbxassetid://9086208751"
 notification.Volume = 10
 
 game.StarterGui:SetCore("SendNotification", {
-      Icon = "http://www.roblox.com/asset/?id=12523036534";
-      Title = "Domadic Hub", 
-      Text = "ðŸ”ƒLoading...ðŸ”ƒ";
+      Icon = "rbxassetid://17585525987";
+      Title = "MIKIMARU HUB", 
+      Text = "บางฟังชั่นอาจจะไม่ทำงานเนื่องจากการไม่รับลอง";
 })
 wait(2)
 game.StarterGui:SetCore("SendNotification", {
-      Icon = "http://www.roblox.com/asset/?id=12523036534";
-      Title = "Domadic Hub", 
-      Text = "âœ…Completeâœ…";
+      Icon = "rbxassetid://17585525987";
+      Title = "MIKIMARU HUB", 
+      Text = "key free YT SCARLET XD or join discord";
 notification:Play()
 })
-   --ถ้าอยากให้เปิดเขียนtrue/ถ้าอยากให้ปิดเขียนfalse
+
+    local CoreGui = game:GetService("StarterGui")
+    CoreGui:SetCore("SendNotification", {
+        Title = "MIKIMARU HUB",
+        Text = "Start Kaitun",
+        Icon = "rbxassetid://17585525987",
+        Duration = math.huge,
+        Callback = AllowRunServiceBind,
+    })
+    local CoreGui = game:GetService("StarterGui")
+    CoreGui:SetCore("SendNotification", {
+        Title = "MIKIMARU HUB",
+        Text = "Key Free ty SCARLET XD",
+        Icon = "rbxassetid://17585525987",
+        Duration = math.huge,
+        Callback = AllowRunServiceBind,
+           Button1 = "Okay",
+})
+    local CoreGui = game:GetService("StarterGui")
+    CoreGui:SetCore("SendNotification", {
+        Title = "MIKIMARU HUB",
+        Text = "1-2550 Kaitun but bad",
+        Icon = "rbxassetid://17585525987",
+        Duration = math.huge,
+        Callback = AllowRunServiceBind,
+          Button1 = "Okay",
+})
+
+--ถ้าอยากให้เปิดเขียนtrue/ถ้าอยากให้ปิดเขียนfalse
 if game.PlaceId == 2753915549 then
     World1 = true
 elseif game.PlaceId == 4442272183 then
