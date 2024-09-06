@@ -12,11 +12,11 @@ local Window = Fluent:CreateWindow({
     MinimizeKey = Enum.KeyCode.End
 })
 local Tabs = {
-    Main = Window:AddTab({ Title = "Main", Icon = "home" }),
+    Main = Window:AddTab({ Title = "General", Icon = "home" }),
     Setting = Window:AddTab({ Title = "Setting", Icon = "settings" }),
     Stats = Window:AddTab({ Title = "Stats", Icon = "plus-circle" }),
     Player = Window:AddTab({ Title = "Player", Icon = "box" }),
-    Teleport = Window:AddTab({ Title = "Island", Icon = "palmtree" }),
+    Teleport = Window:AddTab({ Title = "Travel", Icon = "palmtree" }),
     Fruit = Window:AddTab({ Title = "Fruit", Icon = "cherry" }),
     Raid = Window:AddTab({ Title = "Raid", Icon = "swords" }),
     Race = Window:AddTab({ Title = "Race V4", Icon = "chevrons-right" }),
@@ -4744,11 +4744,11 @@ end)
         end
     end)
 
-local ToggleFast = Tabs.Setting:AddToggle("ToggleFast", {Title = " Fast Attack",Description = "ความเร็วโจมตี", Default = true })
+local ToggleFast = Tabs.Setting:AddToggle("ToggleFast", {Title = " Fast Attack",Description = "ความเร็วโจมตี", Default = false })
 ToggleFast:OnChanged(function(Value)
     _G.FastAttack = Value
 end)
-Options.ToggleFast:SetValue(true)
+Options.ToggleFast:SetValue(false)
 local CameraShaker = require(game.ReplicatedStorage.Util.CameraShaker)
 CombatFrameworkR = require(game:GetService("Players").LocalPlayer.PlayerScripts.CombatFramework)
 y = debug.getupvalues(CombatFrameworkR)[2]
@@ -4783,8 +4783,8 @@ spawn(function()
 end)
 
 
-local ToggleFast = Tabs.Setting:AddToggle("ToggleFast", {Title = "Enabled Fast Attack | Mobile",Description = "ความเร็วโจมตี | มือถือกาก", Default = true })
-ToggleFast:OnChanged(function(Value)
+local ToggleFast = Tabs.Setting:AddToggle("ToggleFast", {Title = "Enabled Fast Attack | Mobile",Description = "ความเร็วโจมตี | มือถือกาก", Default = false })
+ToggleFast:OnChanged(function(false)
     _G.FastNe = Value
 end)
 Options.ToggleFast:SetValue(true)
@@ -4813,6 +4813,47 @@ spawn(function()
         end
     end)
 end)
+
+local ToggleFastAttack = Tabs.Setting:AddToggle("ToggleFastAttack", {Title = "Very Fast Attack",Description = "ความเร็วโจมตี ( เร็วมาก )", Default = true })
+
+ToggleFastAttack:OnChanged(function(Value)
+ _G.FastAttackFaiFao = Value
+end)
+Options.ToggleFastAttack:SetValue(true)
+
+
+
+local SliderDelayAttackPlayer = Tabs.Setting:AddSlider("SliderDelayAttackPlayer", {
+    Title = "Very Fast Attack",",
+    Description = "ความเร็วโจมตี ( เร็วมาก ),
+    Default = 0.1,
+    Min = 0,
+    Max = 5,
+    Rounding = 1,
+    Callback = function(Value)
+       _G.DelayAttackPlayer = Value
+    end
+})
+
+SliderDelayAttackPlayer:OnChanged(function(Value)
+   _G.DelayAttackPlayer = Value
+end)
+
+SliderDelayAttackPlayer:SetValue(0.1)
+
+spawn(function()
+while wait() do
+    pcall(function()
+        if _G.FastAttackFaiFao then
+            repeat wait(_G.DelayAttackPlayer)
+               AttackNoCoolDown()
+            until not _G.FastAttackFaiFao
+        end
+    end)
+end
+end)
+local Camera = require(game.ReplicatedStorage.Util.CameraShaker)
+Camera:Stop()
 
     local ToggleBringMob = Tabs.Setting:AddToggle("ToggleBringMob", {Title = "Enabled Bring Mob",Description = "รวมมอน", Default = true })
     ToggleBringMob:OnChanged(function(Value)
@@ -4901,11 +4942,11 @@ end)
     Options.ToggleBypassTP:SetValue(true)
 
 
-local ToggleRemove = Tabs.Setting:AddToggle("ToggleRemove", {Title = " Enabled Remove Dame Text",Description = "ลบดาเมด", Default = true })
+local ToggleRemove = Tabs.Setting:AddToggle("ToggleRemove", {Title = "  Remove Dame Text",Description = "ลบดาเมด", Default = false })
 ToggleRemove:OnChanged(function(Value)
     _G.RemoveDameText = Value
     end)
-    Options.ToggleRemove:SetValue(true)
+    Options.ToggleRemove:SetValue(false)
 
     spawn(function()
         while wait() do
@@ -4918,7 +4959,7 @@ ToggleRemove:OnChanged(function(Value)
         end)
 
         
-local ToggleRemoveNotify = Tabs.Setting:AddToggle("ToggleRemoveNotify", {Title = " Enabled Remove All Notify",Description = "เปิดลบการแจ้งเตือนทั้งหมด", Default = false })
+local ToggleRemoveNotify = Tabs.Setting:AddToggle("ToggleRemoveNotify", {Title = " Remove All Notify",Description = "เปิดลบการแจ้งเตือนทั้งหมด", Default = false })
 ToggleRemoveNotify:OnChanged(function(Value)
     RemoveNotify = Value
     end)
@@ -5218,52 +5259,6 @@ ToggleQuanSat:OnChanged(function(Value)
     game:GetService("Workspace").Camera.CameraSubject = game:GetService("Players").LocalPlayer.Character.Humanoid
 end)
 Options.ToggleQuanSat:SetValue(false)
-
-
-
-
-
-
-local ToggleFastAttack = Tabs.Player:AddToggle("ToggleFastAttack", {Title = " Fast Attack Player",Description = "ความเร็วโจมตีผู้เล่น", Default = false })
-
-ToggleFastAttack:OnChanged(function(Value)
- _G.FastAttackFaiFao = Value
-end)
-Options.ToggleFastAttack:SetValue(false)
-
-
-
-local SliderDelayAttackPlayer = Tabs.Player:AddSlider("SliderDelayAttackPlayer", {
-    Title = "Fast Attack Player",
-    Description = "ความเร็วโจมตีผู้เล่น",
-    Default = 0.1,
-    Min = 0,
-    Max = 5,
-    Rounding = 1,
-    Callback = function(Value)
-       _G.DelayAttackPlayer = Value
-    end
-})
-
-SliderDelayAttackPlayer:OnChanged(function(Value)
-   _G.DelayAttackPlayer = Value
-end)
-
-SliderDelayAttackPlayer:SetValue(0.1)
-
-spawn(function()
-while wait() do
-    pcall(function()
-        if _G.FastAttackFaiFao then
-            repeat wait(_G.DelayAttackPlayer)
-               AttackNoCoolDown()
-            until not _G.FastAttackFaiFao
-        end
-    end)
-end
-end)
-local Camera = require(game.ReplicatedStorage.Util.CameraShaker)
-Camera:Stop()
 
 
 function getAllBladeHitsPlayers(Sizes)
