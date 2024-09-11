@@ -3864,37 +3864,6 @@ Set:Toggle("Bypass TP", true, function(value)
     BypassTP = value
 end)
 
-local AttackList = {0, 0.100, 0.150, 0.165, 0.175, 0.200, 0.250}
-_G.FastAttackDelay = 0.200
-Set:Dropdown("Fast Attack Delay", AttackList,_G.FastAttackDelay,function(v)
-    _G.FastAttackDelay = v
-end)
-
-Set:Toggle("Bring Mob",true,false,function(Mag)
-    _G.BringMonster = Mag
-end)
-    
-local Bring = {"Low", "Normal", "High"}
-_G.BringMode = "Normal"
-Set:Dropdown("BringMob Mode", Bring,_G.BringMode,function(value)
-    _G.BringMode = value
-end)
-spawn(function()
-    while wait(.1) do
-        if _G.BringMode then
-            pcall(function()
-                if _G.BringMode == "Low" then
-                    _G.BringMode = 350
-                elseif _G.BringMode == "Normal" then
-                    _G.BringMode = 500
-                elseif _G.BringMode == "High" then
-                    _G.BringMode = 800
-                end
-            end)
-        end
-    end
-end)
-
 Set:Toggle("Fast Attack", true, function(value)
     _G.FastAttack = value
 end)
