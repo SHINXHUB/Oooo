@@ -3868,7 +3868,7 @@ Set:Toggle("Fast Attack", true, function(value)
     _G.FastAttack = value
 end)
 
-    Set:Toggle("Attack Aura",true,"Attack Mob",function(value)
+    Set:Toggle("Fast Attack", true, function(value)
         _G.AttackMob = value
     end)
 
