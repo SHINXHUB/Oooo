@@ -1,4 +1,4 @@
-local Update = loadstring(Game:HttpGet"https://pst.innomi.net/paste/6bcg35hq63vyh34ofpqo2qz7/raw")()
+local Update = loadstring(Game:HttpGet"https://raw.githubusercontent.com/SHINXHUB/CopyCFrame/main/%E0%B9%84%E0%B8%A1%E0%B9%88%E0%B8%A1%E0%B8%B5%E0%B8%8A%E0%B8%B7%E0%B9%88%E0%B8%AD.txt")()
 local Alert = loadstring(Game:HttpGet"https://pastebin.com/raw/nfg5ETq7")()
 local Library = Update:Window("Blox Fruits")
 local Main = Library:Tab("Main","rbxassetid://10723407389")
