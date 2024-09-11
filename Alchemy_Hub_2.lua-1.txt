@@ -3862,7 +3862,7 @@ end)
 
 local AttackList = {0, 0.100, 0.150, 0.165, 0.175, 0.200, 0.250}
 _G.FastAttackDelay = 0.200
-Set:Dropdown("Select Weapon", {"Melee","Sword","Fruit","Gun"}, function(value)
+Set:Dropdown("Select Weapon", {"0","0.100","0.150","0.165"0.175",0.200",0.250"}, function(value)
     _G.FastAttackDelay = value
 end)
 
