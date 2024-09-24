@@ -3259,51 +3259,7 @@ local Toggle = Tabs.Main:AddToggle("MyToggle", {Title = "ออโต้ฟา�
             end
         end
     end)
-    
-    local Toggle = Tabs.Main:AddToggle("MyToggle", {Title = "ออโต้ฟาร์ม คาตาคุริ", Default = false })
-
-    Toggle:OnChanged(function(Value)
-		_G.Autodoughking = Value
-		StopTween( _G.Autodoughking)
-		end)
-
-    spawn(function()
-        while wait() do
-            if  _G.Autodoughking and World3 then
-                pcall(function()
-                    if game:GetService("Workspace").Enemies:FindFirstChild("Dough King") then
-                        for i,v in pairs(game:GetService("Workspace").Enemies:GetChildren()) do
-                            if v.Name == "Dough King" then
-                                if v:FindFirstChild("Humanoid") and v:FindFirstChild("HumanoidRootPart") and v.Humanoid.Health > 0 then
-                                    repeat task.wait()
-                                        AutoHaki()
-                                        EquipWeapon(_G.SelectWeapon)
-                                        v.HumanoidRootPart.CanCollide = false
-                                        v.Humanoid.WalkSpeed = 0
-                                        v.HumanoidRootPart.Size = Vector3.new(50,50,50)
-                                        HyperCahaya(v.HumanoidRootPart.CFrame * CFrame.new(PosX,PosY,PosZ))
-                                        game:GetService("VirtualUser"):CaptureController()
-                                        game:GetService("VirtualUser"):Button1Down(Vector2.new(1280,672))
-                                        sethiddenproperty(game.Players.LocalPlayer,"SimulationRadius",math.huge)
-                                    until not  _G.Autodoughking or not v.Parent or v.Humanoid.Health <= 0
-                                end
-                            end
-                        end
-                    else
-                    HyperCahaya(CFrame.new(-2662.818603515625, 1062.3480224609375, -11853.6953125))
-                        if game:GetService("ReplicatedStorage"):FindFirstChild("Dough King") then
-                            HyperCahaya(game:GetService("ReplicatedStorage"):FindFirstChild("Dough King").HumanoidRootPart.CFrame * CFrame.new(2,20,2))
-                        else
-                            if  _G.AutodoughkingHop then
-                                Hop()
-                            end
-                        end
-                    end
-                end)
-            end
-        end
-    end)
-		
+   
     local Toggle = Tabs.Main:AddToggle("MyToggle", {Title = "ออโต้ฟาร์ม โบน", Default = false })
 
     Toggle:OnChanged(function(Value)
