@@ -1,7 +1,7 @@
 repeat wait(1) until game:IsLoaded()
 local AlchemyNotify = function(Text_i,Duration_i)
     game.StarterGui:SetCore("SendNotification", {
-        Title = "Alchemy Hub V2",
+        Title = "SHIN X HUB",
         Text = Text_i,
         Duration = Duration_i,
         Icon = "rbxassetid://14981376704"
@@ -9,14 +9,14 @@ local AlchemyNotify = function(Text_i,Duration_i)
 end
 --Key
 wait(0.1)
-AlchemyNotify("Thanks for using Alchemy Hub!",5)
+AlchemyNotify("Thanks for using SHIN X HUB!",5)
 wait(0.1)
-AlchemyNotify("discord.gg/dUdzZskBCC",5)
+AlchemyNotify("YT SHIN X HUB",5)
 wait(0.5)
 local Notification = require(game:GetService("ReplicatedStorage").Notification)
-Notification.new("<Color=Cyan>Alchemy Hub V2Script<Color=/>"):Display()
+Notification.new("<Color=Cyan>SHIN X HUB V2Script<Color=/>"):Display()
 wait(0.5)
-Notification.new("<Color=Yellow>Create By x2Neptune<Color=/>"):Display()
+Notification.new("<Color=Yellow>ผมเขียนว่าเสือก<Color=/>"):Display()
 wait(1)
 repeat
     wait()
@@ -2125,21 +2125,6 @@ task.spawn(function()
 	end
 end)
 
-local FastFree = {
-    "0", "0.1", "0.15", "0.155", "0.16", "0.165", "0.17", "0.175", "0.18", "0.185"
-}
-
-Main:Dropdown("Fast Attack Delay", FastFree, function(value)
-    _G.FastAttackDelay = tonumber(value) -- แปลงค่าที่เลือกเป็นตัวเลข
-end)
-
-while wait() do
-    pcall(function()
-        if _G.FastAttackDelay then
-            _G.FastAttackDelay = tonumber(_G.FastAttackDelay)
-        end
-    end)
-ene
     Main:Toggle("UFF", false, function(value)
         UFFF = value
     end)
