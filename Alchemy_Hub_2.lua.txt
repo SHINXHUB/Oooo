@@ -2136,7 +2136,6 @@ end)
 while wait() do
     pcall(function()
         if _G.FastAttackDelay then
-            -- ไม่ต้องตรวจซ้ำหลายครั้ง ค่าเป็นตัวเลขอยู่แล้ว
             _G.FastAttackDelay = tonumber(_G.FastAttackDelay)
         end
     end)
