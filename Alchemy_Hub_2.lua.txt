@@ -4,7 +4,7 @@ local AlchemyNotify = function(Text_i,Duration_i)
         Title = "SHIN X HUB",
         Text = Text_i,
         Duration = Duration_i,
-        Icon = "rbxassetid://14981376704"
+        Icon = "rbxassetid://18954689553"
     })
 end
 --Key
@@ -25,19 +25,19 @@ until game.Players.LocalPlayer
 local ui_link = "https://pastebin.com/raw/RtpUw4tR"
 local a = loadstring(game:HttpGet(ui_link))()
 local a = a:Window("Free Version | Blox Fruit")
-local HomePage = a:Tab("Home", "rbxassetid://16062922985")
-local Main = a:Tab("Main", "rbxassetid://15712703260")
-local Set = a:Tab("Setting", "rbxassetid://15712711639")
-local Farm = a:Tab("Other Farm", "rbxassetid://15712717270")
-local Stats = a:Tab("Stats", "rbxassetid://15712723981")
-local Race = a:Tab("Race V4", "rbxassetid://15712776421")
-local Event = a:Tab("Games Event", "rbxassetid://15806749681")
-local Tele = a:Tab("Teleport", "rbxassetid://15712738876")
-local Player = a:Tab("Player", "rbxassetid://15712750195")
-local DemonFruit = a:Tab("Devil Fruit", "rbxassetid://15712758182")
-local Raid = a:Tab("Raid", "rbxassetid://15712763124")
-local Shop = a:Tab("Shop", "rbxassetid://15712767144")
-local Misc = a:Tab("Misc", "rbxassetid://15712771666")
+local HomePage = a:Tab("Home", "rbxassetid://18954689553")
+local Main = a:Tab("Main", "rbxassetid://18954689553")
+local Set = a:Tab("Setting", "rbxassetid://18954689553")
+local Farm = a:Tab("Other Farm", "rbxassetid://18954689553")
+local Stats = a:Tab("Stats", "rbxassetid://18954689553")
+local Race = a:Tab("Race V4", "rbxassetid://18954689553")
+local Event = a:Tab("Games Event", "rbxassetid://18954689553")
+local Tele = a:Tab("Teleport", "rbxassetid://18954689553")
+local Player = a:Tab("Player", "rbxassetid://18954689553")
+local DemonFruit = a:Tab("Devil Fruit", "rbxassetid://18954689553")
+local Raid = a:Tab("Raid", "rbxassetid://18954689553")
+local Shop = a:Tab("Shop", "rbxassetid://18954689553")
+local Misc = a:Tab("Misc", "rbxassetid://18954689553")
 
 HomePage:Seperator("Alchemy Hub")
 
